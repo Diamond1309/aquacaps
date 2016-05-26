@@ -127,7 +127,7 @@ typedef struct MyData_t{
 	u16	Klapan[ZONE_COUNT];	// 003A-0045 частота клапана в зонах
 	u16	CurZone;	// 46 текущая зона
 	u16	HoldZone;	// 47 удерживаемая зона (>12 - не удерживать)
-
+	u32 ArchPoint;
 	//----------
 
 
