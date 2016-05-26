@@ -1,0 +1,8 @@
+$ cat .gitignore
+#.gitignore
+*.[oa]
+*.map
+*.bin
+*.hex
+*.elf
+/AquaCaps/*
