@@ -67,6 +67,7 @@ void Init(){
 		Periph_BKPWrite(BKP_SKN,0);
 	}
 	I2C_EE_Init();
+	MyData.ArchPoint = Periph_BKPReadLong(BKP_ARCH);
 }
 void Timer_1s(){
 	GlobalTime++;
