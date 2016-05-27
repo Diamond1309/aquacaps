@@ -5,6 +5,7 @@ u8 step_write_func1, step_write_func2; // идентификатор алгоритма отправки пакет
 u8 step_rule_timer1, step_rule_timer2; // таймер алгоритма отправки пакетов для DIDO_Steper
 u32 alg_step_init_pause;	// пауза перед выполнением следующего шага алгоритма отправки пакетов для DIDO_Steper
 u32 alarm_door_timer;		// фильтр для сигнала "крышка закрыта"
+u16 alg_saved_work_time;	// сохраненное значение времени работы - для записи в архив по завершению
 #define STEP_WRITE_DONE		0xDD
 
 #define ALG_EVENT_START				0x0001
@@ -16,6 +17,7 @@ u32 alarm_door_timer;		// фильтр для сигнала "крышка закрыта"
 #define ALG_EVENT_POSS				0x0040
 #define ALG_EVENT_ZONEPARAM			0x0080
 #define ALG_EVENT_START_AFTER_INIT	0x0100
+#define ALG_EVENT_STARTED			0x0200
 u16 Alg_Events = 0;
 
 #define ALG_STEP_INIT_PASUE	1000
@@ -91,6 +93,7 @@ void Alg_Start(){
 
 	MyData.DO |= DO_N2 | DO_Ozon;
 	MyData.Timer = MyData.WorkTime;
+	alg_saved_work_time = MyData.WorkTime;
 	MyData.State = STATE_WORK;
 	// запускаем шаговик
 	Alg_Events |= ALG_EVENT_START;
@@ -99,6 +102,7 @@ void Alg_Start(){
 	Alg_StepWrite_Mode2(STEP_MODE2_FREQ,MyData.Klapan[MyData.CurZone],1);
 	Periph_BKPWrite(BKP_SKN, Periph_BKPRead(BKP_SKN)+1);
 	MyData.Warnings &= ~WARN_STEP1_PREP;
+	Archive_Add(ARCH_CODE_EVENT, ARCH_NUMBER_EVENT_STARTING,alg_saved_work_time);
 }
 void Alg_HoldZone2(){
 	if(MyData.HoldZone<ZONE_COUNT)
@@ -128,9 +132,14 @@ void Alg_Stop(){
 	Alg_Events &= ~(ALG_EVENT_START | ALG_EVENT_STARTING | ALG_EVENT_WORK | ALG_EVENT_STOP | ALG_EVENT_STOPING | ALG_EVENT_OFF);
 	Alg_Events |= ALG_EVENT_STOP;
 	MyData.State = STATE_AFTERWORK;
+
+	if(MyData.Timer) Archive_Add(ARCH_CODE_EVENT,ARCH_NUMBER_EVENT_WORKABORT,alg_saved_work_time - MyData.Timer);
+	else Archive_Add(ARCH_CODE_EVENT,ARCH_NUMBER_EVENT_WORKDONE,alg_saved_work_time);
+
 	MyData.Timer = FlashConf.TimeAfterWork;
 	Alg_PCH_WriteCmd(PCH_CMD_STOP);
 	Alg_StepStop2();
+
 }
 void Alg_Init(){
 	TmpData.StepInit_step = 0;
@@ -212,6 +221,11 @@ void Alg_Execute(){
 	if((MyData.State == STATE_WORK)&&(!(MyData.DI & DI_Closed))){
 		if(!alarm_door_timer)alarm_door_timer = ALARM_DOOR_TIMER;
 	}else alarm_door_timer = 0;
+	// запущен
+	if(Alg_Events & ALG_EVENT_STARTED){
+		Alg_Events &= ~ALG_EVENT_STARTED;
+		Archive_Add(ARCH_CODE_EVENT, ARCH_NUMBER_EVENT_STARTED,0);
+	}
 }
 
 
@@ -296,6 +310,7 @@ void Alg_Step_Exec(){
 			if(TmpData.StepBusy1 & STEP_STATE_BUSY){
 				Alg_Events &= ~ALG_EVENT_STARTING;
 				Alg_Events |= ALG_EVENT_WORK;
+				Alg_Events |= ALG_EVENT_STARTED;
 			}
 		}
 		/// шаговик работает

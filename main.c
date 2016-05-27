@@ -68,6 +68,7 @@ void Init(){
 	}
 	I2C_EE_Init();
 	MyData.ArchPoint = Periph_BKPReadLong(BKP_ARCH);
+	Archive_Add(ARCH_CODE_EVENT,ARCH_NUMBER_EVENT_POWERON,0);
 }
 void Timer_1s(){
 	GlobalTime++;
@@ -119,6 +120,8 @@ void EventsAndCmd(){
 	}
 }
 int main(void){
+	uint32_t lastAlarm=0,lastWarn=0,lastSU=0;
+	uint8_t k;
 	Init();
     while(1){
     	ResetIWDG();
@@ -130,6 +133,25 @@ int main(void){
     	EventsAndCmd();
     	MultiScanner_Execute();
     	Alg_Execute();
+    	// Архивация изменений Alarms, Warn, SU
+    	if(lastAlarm ^ MyData.Alarms){
+    		u16 mask = lastAlarm^MyData.Alarms;
+    		for(k=0;k<16;k++)if(mask & (0x0001<<k))
+    			Archive_Add(ARCH_CODE_ALARM,k,(MyData.Alarms & mask)?1:0);
+    		lastAlarm = MyData.Alarms;
+    	}
+    	if(lastWarn ^ MyData.Warnings){
+    		u16 mask = lastWarn ^ MyData.Warnings;
+    		for(k=0;k<16;k++)if(mask & (0x0001<<k))
+    			Archive_Add(ARCH_CODE_WARN, k, (MyData.Warnings & mask)?1:0);
+    		lastWarn = MyData.Warnings;
+    	}
+    	/*if(lastSU ^ MyData.SU_State){
+    		u32 mask = lastSU ^ MyData.SU_State;
+    		for(k=0;k<32;k++)if(mask & (0x0001<<k))
+    			Archive_Add(ARCH_CODE_SU, k, (MyData.SU_State & mask)?1:0);
+    		lastSU = MyData.SU_State;
+    	}*/
 
     }
 }

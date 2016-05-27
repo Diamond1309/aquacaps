@@ -12,6 +12,7 @@
 #include "Libs/periph.h"
 #include "Libs/algoritm.h"
 #include "Libs/i2c_eeprom.h"
+#include "Libs/archive.h"
 
 typedef u32 uint32_t;
 typedef u16 uint16_t; 

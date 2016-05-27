@@ -83,6 +83,9 @@ unsigned char MBS_UserFunction(unsigned char UART_n, unsigned char *Data, unsign
 	if(Data[1]==0x54){
 
 	}
+	if(Data[1]==0x41){
+		return Archive_ModbusResponse(Data,DataLen);
+	}
 	if(Data[1]==0x51){
 		if (DataLen <= 8) return 0;
 		u32 StartAddr = *((uint32_t*)(Data+2+da));
