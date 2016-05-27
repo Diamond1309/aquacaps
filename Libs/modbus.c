@@ -36,6 +36,8 @@ void MBS_SetReg(unsigned char UART_n, unsigned short int RTU, unsigned short int
     switch (Addr)
     {
         case 0x0000: break;
+        case 0x0001: RTC_SetCounter((GlobalTime & 0xFFFF0000) | Data); break;
+        case 0x0002: RTC_SetCounter((GlobalTime & 0x0000FFFF) | (((uint32_t)Data)<<16)); break;
         case 0x0004: CmdFlags |= Data; break;
         case 0x0005: CmdFlags |= ((u32)Data)<<16; break;
         case 0x0006: Periph_BKPWrite(0,Data); break;

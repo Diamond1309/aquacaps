@@ -35,6 +35,131 @@ void Init_DI(){
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
 }
+int Init_RTC(void)
+{
+	NVIC_InitTypeDef NVIC_InitStructure;
+	NVIC_InitStructure.NVIC_IRQChannel = RTC_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 6;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_Init(&NVIC_InitStructure);
+
+	//разрешить тактирование модулей управления питанием и управлением резервной областью
+	  RCC->APB1ENR |= RCC_APB1ENR_PWREN | RCC_APB1ENR_BKPEN;
+	  //разрешить доступ к области резервных данных
+	  PWR->CR |= PWR_CR_DBP;
+	  //если часы выключены - инициализировать их
+	  if ((RCC->BDCR & RCC_BDCR_RTCEN) != RCC_BDCR_RTCEN)
+	  //if(1)
+	  {
+	    //выполнить сброс области резервных данных
+	    RCC->BDCR |=  RCC_BDCR_BDRST;
+	    RCC->BDCR &= ~RCC_BDCR_BDRST;
+
+	    //выбрать источником тактовых импульсов внешний кварц 32768 и подать тактирование
+	    RCC->BDCR |=  RCC_BDCR_RTCEN | RCC_BDCR_RTCSEL_LSE;
+
+	    RTC->CRL  |=  RTC_CRL_CNF;   //разрешить конфигурирование регистров RTC
+	    RTC->PRLL  = 0x7FFF;         //регистр деления на 32768
+	    RTC->CRH  =  RTC_CRH_SECIE;  //разрешить прерывание от секундных импульсов
+	    RTC->CRL  &=  ~RTC_CRL_CNF;  //выйти из режима конфигурирования
+
+	    //установить бит разрешения работы и дождаться установки бита готовности
+	    RCC->BDCR |= RCC_BDCR_LSEON;
+	    while ((RCC->BDCR & RCC_BDCR_LSEON) != RCC_BDCR_LSEON){}
+
+	    RTC->CRL &= (uint16_t)~RTC_CRL_RSF;
+	    while((RTC->CRL & RTC_CRL_RSF) != RTC_CRL_RSF){}
+
+	    return 1;
+	  }
+	  RTC->CRL |=  RTC_CRL_CNF;  //разрешить конфигурирование регистров RTC
+	  RTC->CRH  =  RTC_CRH_SECIE;//разрешить прерывание от секундных импульсов
+	  RTC->CRL &= ~RTC_CRL_CNF;  //выйти из режима конфигурирования
+	  NVIC_EnableIRQ (RTC_IRQn);
+	  return 0;
+
+}
+void Init_RCC(void)
+{
+	ErrorStatus HSEStartUpStatus;
+    /*RCC system reset(for debug purpose) */
+    RCC_DeInit();
+    /* Enable HSE */
+    RCC_HSEConfig(RCC_HSE_ON);
+    /* Wait till HSE is ready */
+    HSEStartUpStatus = RCC_WaitForHSEStartUp();
+    if (HSEStartUpStatus == SUCCESS)
+    {
+        /* HCLK = SYSCLK */
+        RCC_HCLKConfig(RCC_SYSCLK_Div1);
+        /* PCLK2 = HCLK*/
+        RCC_PCLK2Config(RCC_HCLK_Div1);
+        /* PCLK1 = HCLK*/
+        RCC_PCLK1Config(RCC_HCLK_Div1);
+        //ADC CLK
+        RCC_ADCCLKConfig(RCC_PCLK2_Div2);
+        /* PLLCLK = 8MHz * 3 = 24 MHz */
+        RCC_PLLConfig(RCC_PLLSource_HSE_Div1, RCC_PLLMul_9);
+        /* Enable PLL */
+        RCC_PLLCmd(ENABLE);
+        /* Wait till PLL is ready */
+        while (RCC_GetFlagStatus(RCC_FLAG_PLLRDY) == RESET) {}
+        /* Select PLL as system clock source */
+        RCC_SYSCLKConfig(RCC_SYSCLKSource_PLLCLK);
+        /* Wait till PLL is used as system clock source */
+        while (RCC_GetSYSCLKSource() != 0x08) {}
+    }
+
+    /*Then need to enable peripheral clocks ----------------------------------------------*/
+}
+void SetSysClockTo72(void)
+{
+
+	ErrorStatus HSEStartUpStatus;
+    /* SYSCLK, HCLK, PCLK2 and PCLK1 configuration -----------------------------*/
+    /* RCC system reset(for debug purpose) */
+    RCC_DeInit();
+    /* Enable HSE */
+    RCC_HSEConfig( RCC_HSE_ON);
+    /* Wait till HSE is ready */
+    HSEStartUpStatus = RCC_WaitForHSEStartUp();
+    if (HSEStartUpStatus == SUCCESS)
+    {
+        /* Enable Prefetch Buffer */
+        FLASH_PrefetchBufferCmd( FLASH_PrefetchBuffer_Enable);
+        /* Flash 2 wait state */
+        FLASH_SetLatency( FLASH_Latency_2);
+        /* HCLK = SYSCLK */
+        RCC_HCLKConfig( RCC_SYSCLK_Div1);
+        /* PCLK2 = HCLK */
+        RCC_PCLK2Config( RCC_HCLK_Div1);
+        /* PCLK1 = HCLK/2 */
+        RCC_PCLK1Config( RCC_HCLK_Div2);
+        /* PLLCLK = 8MHz * 9 = 72 MHz */
+        RCC_PLLConfig(0x00010000, RCC_PLLMul_9);
+        /* Enable PLL */
+        RCC_PLLCmd( ENABLE);
+        /* Wait till PLL is ready */
+        while (RCC_GetFlagStatus(RCC_FLAG_PLLRDY) == RESET)
+        {
+        }
+        /* Select PLL as system clock source */
+        RCC_SYSCLKConfig( RCC_SYSCLKSource_PLLCLK);
+        /* Wait till PLL is used as system clock source */
+        while (RCC_GetSYSCLKSource() != 0x08)
+        {
+        }
+    }
+    else
+    { /* If HSE fails to start-up, the application will have wrong clock configuration.
+     User can add here some code to deal with this error */
+        /* Go to infinite loop */
+        while (1)
+        {
+        }
+    }
+}
 void Set_Led(u8 led, u8 state){
 	if(state)
 		Set_Leds(LedValue | (1<<led));
@@ -103,7 +228,18 @@ void TIM2_IRQHandler(void)
 	   }
 	}
 }
-
+void RTC_IRQHandler(void)
+{
+	uint32_t Time=0;
+    //причина прерывания - переполнение входного делителя (новая секунда)
+   if(RTC->CRL & RTC_CRL_SECF)
+     {
+        RTC->CRL &= ~RTC_CRL_SECF;    //сбросить флаг (обязательно!!!)
+        //выполняем какие-то действия
+        //GlobalTime=RTC_GetCounter();
+        GlobalTime=RTC_GetCounter();
+     }
+}
 void InitTIM2(void)
 {
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
@@ -165,7 +301,9 @@ u32 Periph_BKPReadLong(u8 addr){
 }
 
 void Init_Periph(){
+	SetSysClockTo72();
 	InitIWDG();
+	Init_RTC();
 	InitBKP();
 	InitTIM2();
 	Init_Leds();

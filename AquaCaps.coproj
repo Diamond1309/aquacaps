@@ -79,9 +79,11 @@
     <Component id="443" name="BKP" path="" type="2"/>
     <Component id="444" name="GPIO" path="" type="2"/>
     <Component id="446" name="DMA" path="" type="2"/>
+    <Component id="448" name="RTC" path="" type="2"/>
     <Component id="449" name="IWDG" path="" type="2"/>
     <Component id="453" name="I2C" path="" type="2"/>
     <Component id="454" name="DBGMCU" path="" type="2"/>
+    <Component id="455" name="FLASH" path="" type="2"/>
     <Component id="456" name="TIM" path="" type="2"/>
     <Component id="458" name="USART" path="" type="2"/>
     <Component id="460" name="CMSIS Boot" path="" type="2"/>
@@ -89,13 +91,13 @@
   </Components>
   <Files>
     <File name="stm_lib/inc/stm32f10x_tim.h" path="stm_lib/inc/stm32f10x_tim.h" type="1"/>
-    <File name="stm_lib/src/stm32f10x_dbgmcu.c" path="stm_lib/src/stm32f10x_dbgmcu.c" type="1"/>
     <File name="cmsis_boot" path="" type="2"/>
+    <File name="stm_lib/src/stm32f10x_dbgmcu.c" path="stm_lib/src/stm32f10x_dbgmcu.c" type="1"/>
     <File name="Libs/periph.c" path="Libs/periph.c" type="1"/>
-    <File name="Libs/libModBusSlave.h" path="Libs/libModBusSlave.h" type="1"/>
     <File name="Libs/uarts.c" path="Libs/uarts.c" type="1"/>
-    <File name="stm_lib/inc/stm32f10x_pwr.h" path="stm_lib/inc/stm32f10x_pwr.h" type="1"/>
+    <File name="Libs/libModBusSlave.h" path="Libs/libModBusSlave.h" type="1"/>
     <File name="stm_lib/src/stm32f10x_tim.c" path="stm_lib/src/stm32f10x_tim.c" type="1"/>
+    <File name="stm_lib/inc/stm32f10x_pwr.h" path="stm_lib/inc/stm32f10x_pwr.h" type="1"/>
     <File name="cmsis_boot/startup" path="" type="2"/>
     <File name="Libs/algoritm.h" path="Libs/algoritm.h" type="1"/>
     <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
@@ -107,20 +109,22 @@
     <File name="stm_lib/inc/stm32f10x_dbgmcu.h" path="stm_lib/inc/stm32f10x_dbgmcu.h" type="1"/>
     <File name="Libs/i2c_eeprom.c" path="Libs/i2c_eeprom.c" type="1"/>
     <File name="cmsis_boot/stm32f10x_conf.h" path="cmsis_boot/stm32f10x_conf.h" type="1"/>
+    <File name="stm_lib/inc/stm32f10x_flash.h" path="stm_lib/inc/stm32f10x_flash.h" type="1"/>
     <File name="Libs/archive.c" path="Libs/archive.c" type="1"/>
     <File name="Libs/periph.h" path="Libs/periph.h" type="1"/>
     <File name="stm_lib/inc/stm32f10x_dma.h" path="stm_lib/inc/stm32f10x_dma.h" type="1"/>
-    <File name="Libs/i2c_eeprom.h" path="Libs/i2c_eeprom.h" type="1"/>
     <File name="stm_lib/inc/stm32f10x_iwdg.h" path="stm_lib/inc/stm32f10x_iwdg.h" type="1"/>
+    <File name="Libs/i2c_eeprom.h" path="Libs/i2c_eeprom.h" type="1"/>
     <File name="Libs/uarts.h" path="Libs/uarts.h" type="1"/>
     <File name="stm_lib/src/stm32f10x_usart.c" path="stm_lib/src/stm32f10x_usart.c" type="1"/>
+    <File name="stm_lib/inc/stm32f10x_rtc.h" path="stm_lib/inc/stm32f10x_rtc.h" type="1"/>
     <File name="stm_lib/src/stm32f10x_bkp.c" path="stm_lib/src/stm32f10x_bkp.c" type="1"/>
     <File name="stm_lib/src/stm32f10x_pwr.c" path="stm_lib/src/stm32f10x_pwr.c" type="1"/>
     <File name="stm_lib/src/stm32f10x_gpio.c" path="stm_lib/src/stm32f10x_gpio.c" type="1"/>
     <File name="stm_lib/inc/stm32f10x_gpio.h" path="stm_lib/inc/stm32f10x_gpio.h" type="1"/>
     <File name="Libs/modbus.c" path="Libs/modbus.c" type="1"/>
-    <File name="stm_lib/inc/stm32f10x_usart.h" path="stm_lib/inc/stm32f10x_usart.h" type="1"/>
     <File name="comondef.h" path="comondef.h" type="1"/>
+    <File name="stm_lib/inc/stm32f10x_usart.h" path="stm_lib/inc/stm32f10x_usart.h" type="1"/>
     <File name="cmsis_boot/system_stm32f10x.c" path="cmsis_boot/system_stm32f10x.c" type="1"/>
     <File name="stm_lib/inc/misc.h" path="stm_lib/inc/misc.h" type="1"/>
     <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
@@ -134,16 +138,18 @@
     <File name="Libs/libMultiScanner.h" path="Libs/libMultiScanner.h" type="1"/>
     <File name="stm_lib/inc/stm32f10x_bkp.h" path="stm_lib/inc/stm32f10x_bkp.h" type="1"/>
     <File name="stm_lib/src/stm32f10x_dma.c" path="stm_lib/src/stm32f10x_dma.c" type="1"/>
-    <File name="stm_lib/src" path="" type="2"/>
     <File name="Libs" path="" type="2"/>
+    <File name="stm_lib/src" path="" type="2"/>
     <File name="cmsis" path="" type="2"/>
     <File name="stm_lib" path="" type="2"/>
+    <File name="stm_lib/src/stm32f10x_flash.c" path="stm_lib/src/stm32f10x_flash.c" type="1"/>
     <File name="cmsis_boot/system_stm32f10x.h" path="cmsis_boot/system_stm32f10x.h" type="1"/>
     <File name="stm_lib/inc/stm32f10x_rcc.h" path="stm_lib/inc/stm32f10x_rcc.h" type="1"/>
     <File name="stm_lib/inc/stm32f10x_i2c.h" path="stm_lib/inc/stm32f10x_i2c.h" type="1"/>
     <File name="stm_lib/src/stm32f10x_i2c.c" path="stm_lib/src/stm32f10x_i2c.c" type="1"/>
     <File name="Libs/multiscanner.c" path="Libs/multiscanner.c" type="1"/>
     <File name="stm_lib/inc" path="" type="2"/>
+    <File name="stm_lib/src/stm32f10x_rtc.c" path="stm_lib/src/stm32f10x_rtc.c" type="1"/>
     <File name="main.c" path="main.c" type="1"/>
   </Files>
 </Project>

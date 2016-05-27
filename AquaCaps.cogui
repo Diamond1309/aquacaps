@@ -22,15 +22,13 @@
 <part id="5"/>
 <part id="6"/>
 <part id="8"/>
-<part id="9"/>
-<part id="10"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="D:/Work/workspace/AquaCaps_v1.00/main.c" title="main.c" tooltip="D:/Work/workspace/AquaCaps_v1.00/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AquaCaps/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3572" selectionTopPixel="1280"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2331" selectionTopPixel="1050"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="comondef.h" partName="comondef.h" path="D:/Work/workspace/AquaCaps_v1.00/comondef.h" title="comondef.h" tooltip="D:/Work/workspace/AquaCaps_v1.00/comondef.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AquaCaps/comondef.h"/>
@@ -38,7 +36,7 @@
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="periph.h" partName="periph.h" path="D:/Work/workspace/AquaCaps_v1.00/Libs/periph.h" title="periph.h" tooltip="D:/Work/workspace/AquaCaps_v1.00/Libs/periph.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AquaCaps/Libs/periph.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="478" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="282" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="uarts.c" partName="uarts.c" path="D:/Work/workspace/AquaCaps_v1.00/Libs/uarts.c" title="uarts.c" tooltip="D:/Work/workspace/AquaCaps_v1.00/Libs/uarts.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AquaCaps/Libs/uarts.c"/>
@@ -54,23 +52,15 @@
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="periph.c" partName="periph.c" path="D:/Work/workspace/AquaCaps_v1.00/Libs/periph.c" title="periph.c" tooltip="D:/Work/workspace/AquaCaps_v1.00/Libs/periph.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AquaCaps/Libs/periph.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="19" selectionOffset="5434" selectionTopPixel="960"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7625" selectionTopPixel="2880"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="multiscanner.h" partName="multiscanner.h" path="D:/Work/workspace/AquaCaps_v1.00/Libs/multiscanner.h" title="multiscanner.h" tooltip="D:/Work/workspace/AquaCaps_v1.00/Libs/multiscanner.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AquaCaps/Libs/multiscanner.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="538" selectionTopPixel="210"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="archive.h" partName="archive.h" path="D:/Work/workspace/AquaCaps_v1.00/Libs/archive.h" title="archive.h" tooltip="D:/Work/workspace/AquaCaps_v1.00/Libs/archive.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AquaCaps/Libs/archive.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="663" selectionTopPixel="0"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="archive.c" partName="archive.c" path="D:/Work/workspace/AquaCaps_v1.00/Libs/archive.c" title="archive.c" tooltip="D:/Work/workspace/AquaCaps_v1.00/Libs/archive.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AquaCaps/Libs/archive.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="289" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="modbus.c" partName="modbus.c" path="D:/Work/workspace/AquaCaps_v1.00/Libs/modbus.c" title="modbus.c" tooltip="D:/Work/workspace/AquaCaps_v1.00/Libs/modbus.c" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="modbus.c" partName="modbus.c" path="D:/Work/workspace/AquaCaps_v1.00/Libs/modbus.c" title="modbus.c" tooltip="D:/Work/workspace/AquaCaps_v1.00/Libs/modbus.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AquaCaps/Libs/modbus.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1817" selectionTopPixel="320"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1620" selectionTopPixel="120"/>
 </editor>
 </editors>
 <views>
@@ -84,6 +74,8 @@
 <expanded>
 <element path="/AquaCaps"/>
 <element path="/AquaCaps/Libs"/>
+<element path="/AquaCaps/stm_lib"/>
+<element path="/AquaCaps/stm_lib/inc"/>
 </expanded>
 <selection>
 <element path="/AquaCaps/Libs/modbus.c"/>
@@ -114,6 +106,9 @@
 <viewState/>
 </view>
 <view id="org.eclipse.debug.ui.VariableView" partName="Variables">
+<viewState/>
+</view>
+<view id="org.coocox.component.ui.Help" partName="Help">
 <viewState/>
 </view>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
@@ -152,14 +147,11 @@
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
 <view id="org.coocox.component.ui.ComponentView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.coocox.component.ui.Help"/>
 <view id="org.coocox.builder.ui.views.ProjectView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.search.ui.views.SearchView"/>
 <fastViewBars>
-<fastViewBar fastViewLocation="1024" id="org.eclipse.ui.internal.ViewStack@1c988cf" orientation="256" selectedTabId="org.eclipse.ui.console.ConsoleView" style="0">
-<fastViews>
-<view id="org.eclipse.ui.console.ConsoleView" ratio="0.29936975"/>
-<view id="org.eclipse.search.ui.views.SearchView" ratio="0.29936975"/>
-</fastViews>
-</fastViewBar>
 <fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@9b981f" orientation="256" selectedTabId="org.coocox.builder.ui.exampleView" style="0">
 <fastViews>
 <view id="org.coocox.builder.ui.exampleView" ratio="0.3"/>
@@ -183,10 +175,13 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1c988cf" ratio="0.69957983" ratioLeft="666" ratioRight="286" relationship="4" relative="org.eclipse.ui.internal.ViewStack@be12ae">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
-<page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@9b981f" ratio="0.17136009" ratioLeft="286" ratioRight="1383" relationship="2" relative="org.eclipse.ui.internal.ViewStack@be12ae">
@@ -196,14 +191,15 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1faf4ad" ratio="0.84035474" ratioLeft="1137" ratioRight="216" relationship="2" relative="org.eclipse.ui.internal.ViewStack@9b981f">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<folder activePageID="org.coocox.component.ui.Help" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
-<page content="org.coocox.component.ui.Help" label="LabelNotFound"/>
+<page content="org.coocox.component.ui.Help" label="Help"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
 <page content="org.coocox.coassistant.view.CoAssistantView" label="LabelNotFound"/>
 <page content="org.coocox.builder.ui.MoreExampleView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
@@ -318,70 +314,22 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/AquaCaps/Libs/archive.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/AquaCaps/comondef.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/AquaCaps/Libs/archive.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/AquaCaps/Libs/algoritm.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/AquaCaps/Libs/modbus.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/AquaCaps/Libs/archive.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/AquaCaps/Libs/archive.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/AquaCaps/comondef.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/AquaCaps/Libs/modbus.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/AquaCaps/Libs/periph.c"/>
+<editor factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser">
+<subPage/>
+</editor>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/AquaCaps/Libs/periph.h"/>
+<editor factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser">
+<subPage/>
+</editor>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/AquaCaps/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/AquaCaps/Libs/modbus.c"/>
 </editors>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4979" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4487" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4386" y="0"/>
-</item>
-<item historyLabel="archive.c" index="3">
-<position info="not_deleted" x="354" y="0"/>
-</item>
-<item historyLabel="algoritm.c" index="4">
-<position info="not_deleted" x="7008" y="0"/>
-</item>
-<item historyLabel="archive.h" index="1">
-<position info="not_deleted" x="520" y="0"/>
-</item>
-<item historyLabel="algoritm.c" index="4">
-<position info="not_deleted" x="7008" y="0"/>
-</item>
-<item historyLabel="algoritm.c" index="4">
-<position info="not_deleted" x="10772" y="0"/>
-</item>
-<item historyLabel="algoritm.c" index="4">
-<position info="not_deleted" x="792" y="14"/>
-</item>
-<item historyLabel="algoritm.c" index="4">
-<position info="not_deleted" x="7334" y="0"/>
-</item>
-<item historyLabel="algoritm.c" index="4">
-<position info="not_deleted" x="4267" y="0"/>
-</item>
-<item historyLabel="archive.h" index="1">
-<position info="not_deleted" x="441" y="0"/>
-</item>
-<item historyLabel="algoritm.c" index="4">
-<position info="not_deleted" x="4267" y="0"/>
-</item>
-<item historyLabel="algoritm.c" index="4">
-<position info="not_deleted" x="4576" y="0"/>
-</item>
-<item historyLabel="archive.c" index="3">
-<position info="not_deleted" x="354" y="0"/>
-</item>
-<item historyLabel="modbus.c" index="5">
-<position info="not_deleted" x="3305" y="0"/>
-</item>
-<item historyLabel="archive.c" index="3">
-<position info="not_deleted" x="354" y="0"/>
-</item>
-<item historyLabel="archive.c" index="3">
-<position info="not_deleted" x="361" y="59"/>
-</item>
-<item historyLabel="archive.h" index="1">
-<position info="not_deleted" x="651" y="0"/>
-</item>
 <item historyLabel="archive.c" index="3">
 <position info="not_deleted" x="370" y="22"/>
 </item>
@@ -400,7 +348,7 @@
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="3819" y="0"/>
 </item>
-<item historyLabel="modbus.c" index="5">
+<item historyLabel="modbus.c" index="4">
 <position info="not_deleted" x="3277" y="0"/>
 </item>
 <item historyLabel="archive.c" index="3">
@@ -424,7 +372,7 @@
 <item historyLabel="archive.c" index="3">
 <position info="not_deleted" x="1302" y="1"/>
 </item>
-<item historyLabel="modbus.c" index="5">
+<item historyLabel="modbus.c" index="4">
 <position info="not_deleted" x="3277" y="0"/>
 </item>
 <item historyLabel="archive.c" index="3">
@@ -445,35 +393,88 @@
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="3819" y="0"/>
 </item>
-<item historyLabel="archive.h" index="6">
+<item historyLabel="archive.h" index="5">
 <position info="not_deleted" x="270" y="14"/>
 </item>
-<item historyLabel="archive.c" index="7">
+<item historyLabel="archive.c" index="6">
 <position info="not_deleted" x="1371" y="0"/>
 </item>
-<item historyLabel="archive.c" index="7">
+<item historyLabel="archive.c" index="6">
 <position info="not_deleted" x="438" y="22"/>
 </item>
-<item historyLabel="archive.c" index="7">
+<item historyLabel="archive.c" index="6">
 <position info="not_deleted" x="259" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="5063" y="0"/>
 </item>
-<item historyLabel="comondef.h" index="8">
+<item historyLabel="comondef.h" index="7">
 <position info="not_deleted" x="2562" y="0"/>
 </item>
-<item historyLabel="comondef.h" index="8">
+<item historyLabel="comondef.h" index="7">
 <position info="not_deleted" x="786" y="11"/>
 </item>
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="3450" y="0"/>
 </item>
-<item historyLabel="modbus.c" index="9">
+<item historyLabel="modbus.c" index="8">
 <position info="not_deleted" x="1817" y="0"/>
 </item>
-<item active="true" historyLabel="archive.c" index="7">
-<position info="not_deleted" x="259" y="0"/>
+<item historyLabel="archive.c" index="6">
+<position info="not_deleted" x="289" y="0"/>
+</item>
+<item historyLabel="periph.c" index="9">
+<position info="not_deleted" x="8497" y="0"/>
+</item>
+<item historyLabel="Repository" index="10"/>
+<item historyLabel="periph.c" index="9">
+<position info="not_deleted" x="8497" y="0"/>
+</item>
+<item historyLabel="periph.h" index="11">
+<position info="not_deleted" x="252" y="0"/>
+</item>
+<item historyLabel="periph.c" index="9">
+<position info="not_deleted" x="8497" y="0"/>
+</item>
+<item historyLabel="periph.c" index="9">
+<position info="not_deleted" x="10657" y="0"/>
+</item>
+<item historyLabel="periph.c" index="9">
+<position info="not_deleted" x="4958" y="0"/>
+</item>
+<item historyLabel="periph.c" index="9">
+<position info="not_deleted" x="5043" y="64"/>
+</item>
+<item historyLabel="Repository" index="12"/>
+<item historyLabel="periph.c" index="9">
+<position info="not_deleted" x="5043" y="64"/>
+</item>
+<item historyLabel="periph.h" index="11">
+<position info="not_deleted" x="282" y="0"/>
+</item>
+<item historyLabel="periph.c" index="9">
+<position/>
+</item>
+<item historyLabel="main.c" index="13">
+<position info="not_deleted" x="3574" y="0"/>
+</item>
+<item historyLabel="periph.c" index="9">
+<position info="not_deleted" x="7625" y="0"/>
+</item>
+<item historyLabel="main.c" index="13">
+<position info="not_deleted" x="2439" y="9"/>
+</item>
+<item historyLabel="main.c" index="13">
+<position info="not_deleted" x="2456" y="0"/>
+</item>
+<item historyLabel="main.c" index="13">
+<position info="not_deleted" x="2331" y="0"/>
+</item>
+<item historyLabel="modbus.c" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="modbus.c" index="14">
+<position info="not_deleted" x="1517" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -482,13 +483,18 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
-<persistable>
-<org.coocox.welcome.ui.WelcomePage/>
-</persistable>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="modbus.c" tooltip="AquaCaps/Libs/modbus.c">
 <persistable path="/AquaCaps/Libs/modbus.c"/>
+</file>
+<file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
+<persistable>
+<subPage/>
+</persistable>
+</file>
+<file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
+<persistable>
+<subPage/>
+</persistable>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="i2c_eeprom.c" tooltip="AquaCaps/Libs/i2c_eeprom.c">
 <persistable path="/AquaCaps/Libs/i2c_eeprom.c"/>
@@ -498,10 +504,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="archive.h" tooltip="AquaCaps/Libs/archive.h">
 <persistable path="/AquaCaps/Libs/archive.h"/>
-</file>
-<file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
-<persistable>&#x0A;<subPage/>
-</persistable>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="!download com2_all.bat" tooltip="PM(COMBO) v6.1/!download com2_all.bat">
 <persistable path="/PM(COMBO) v6.1/!download com2_all.bat"/>
@@ -518,17 +520,11 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="MBMaster.h" tooltip="PM(COMBO) v6.1/MBMaster.h">
 <persistable path="/PM(COMBO) v6.1/MBMaster.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="modbus.c" tooltip="AquaCaps/Libs/modbus.c">
-<persistable path="/AquaCaps/Libs/modbus.c"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="i2c_eeprom.c" tooltip="AquaCaps/Libs/i2c_eeprom.c">
 <persistable path="/AquaCaps/Libs/i2c_eeprom.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="archive.c" tooltip="AquaCaps/Libs/archive.c">
 <persistable path="/AquaCaps/Libs/archive.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="lpc11xx_gpio.h" tooltip="lpc1114/LPC111x_Lib/include/lpc11xx_gpio.h">
-<persistable path="/lpc1114/LPC111x_Lib/include/lpc11xx_gpio.h"/>
 </file>
 </mruList>
 </workbench>

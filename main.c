@@ -71,7 +71,7 @@ void Init(){
 	Archive_Add(ARCH_CODE_EVENT,ARCH_NUMBER_EVENT_POWERON,0);
 }
 void Timer_1s(){
-	GlobalTime++;
+	//GlobalTime++;
 	BlinkLong(LED_1S);
 	Alg_Timer1s();
 }
