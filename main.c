@@ -107,6 +107,7 @@ void EventsAndCmd(){
 			case CMD_Vent1_Off: MyData.DO &= ~DO_Vent1; break;
 			case CMD_Vent2_Off: MyData.DO &= ~DO_Vent2; break;
 			case CMD_VentF_Off: MyData.DO &= ~DO_VentF; break;
+			case CMD_ClrArch:	Periph_BKPWriteLong(BKP_ARCH,0); MyData.ArchPoint = 0; break;
 			case CMD_FastCool:
 				MyData.DO |= DO_Vent1 | DO_Vent2;
 				EventFlags |= EVENT_FASTCOOL;

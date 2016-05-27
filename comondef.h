@@ -31,7 +31,7 @@ typedef u8	uint8_t;
 #define BKP_SVN			4
 #define BKP_SKN			8
 /// --------------------------- Команды
-
+#define CMD_ClrArch		0x0001
 #define CMD_AktOpen		0x0002
 #define CMD_AktClose	0x0004
 #define CMD_InitStep	0x0008

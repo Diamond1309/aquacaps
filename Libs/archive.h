@@ -8,6 +8,7 @@ typedef struct ArchiveStruct_t{
 	uint8_t number;
 	uint16_t value;
 	uint32_t time;
+	uint16_t crc;
 }ArchiveStruct_t;
 #pragma pack(0)
 #define ARCH_CODE_EVENT		1
